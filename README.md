@@ -1,21 +1,37 @@
-
-# Odev-1
-
-Bir oyun yazmak istiyorsunuz. Bu yazılım için backend kodlarını JAVA ile geliştirmeyi planlıyoruz. Yeni üye, satış ve kampanya yönetimi yapılması isteniyor. Nesnelere ait özellikleri istediğiniz gibi verebilirsiniz. Burada amaç yazdığınız kodun kalitesidir. Ödevde gereksinimleri tam anlamadığınız durum benim için önemli değil, kendinize göre mantık geliştirebilirsiniz. Dediğim gibi kod kalitesiyle ilgileniyoruz şu an :)
-
-
-
+# Turkcell-Homework
 ## Gereksinimler
+* Oyuncuların sisteme kayıt olabileceği, bilgilerini güncelleyebileceği, kayıtlarını silebileceği bir ortamın simule edilmesi.
+* Girilen müşteri bilgilerinin doğruluğunun, e-devlet sistemlerine benzer şekilde kontrol edilmesi.
+* Oyun satışı yapılabilecek satış ortamının simule edilmesi(yapılan satışlar oyuncu ile ilişkilendirilmeli).
+* Sisteme yeni kampanya girişi, kampanyanın silinmesi ve güncellenmesi imkanlarının simule edilmesi.
+* Satışlarda kampanya entegrasyonunun simule edilmesi.
 
-1.     Oyuncuların sisteme kayıt olabileceği, bilgilerini güncelleyebileceği, kayıtlarını silebileceği bir ortamı simule ediniz. Müşteri bilgilerinin doğruluğunu e-devlet sistemlerini kullanarak doğrulama yapmak istiyoruz. (E-devlet sistemlerinde doğrulama TcNo, Ad, Soyad, DoğumYılı bilgileriyle yapılır. Bunu yapacak servisi simule etmeniz yeterlidir.) (Loglama gibi)
+## Kullanım
+### Kayıt Olma
+* Sisteme kayıt olmak için ilk olarak, Main'de Customer sınıfı kullanılarak bir müşteri referansı oluşturulmalıdır.
+* Daha sonra UserManager sınıfı kullanılarak müşteri kaydı gerçekleştirilebilir.
+* Müşteri bilgileri MernisService sınıfının içindeki checkUser metodu kullanılarak doğrulanır, başarılı olursa müşteri kaydı gerçekleştirilir.
 
-2.     Oyun satışı yapılabilecek satış ortamını simule ediniz.( Yapılan satışlar oyuncu ile ilişkilendirilmelidir. Oyuncunun parametre olarak metotta olmasını kastediyorum.)
+### Oyun İşlemleri
+* Game sınıfı kullanılarak bir oyun referansı oluşturulmalıdır.
+* Game sınıfındaki yapıcı metoda oyunun id, name, cost, description ve countOwner bilgileri girilmeli. Bu bilgilere sahip oyun nesnesi oluşturulur.
+* GameManager sınıfındaki addGame, deleteGame, updateGame metotları ile ekleme, silme ve güncelleme işlemleri yapılabilir.
 
-3.     Sisteme yeni kampanya girişi, kampanyanın silinmesi ve güncellenmesi imkanlarını simule ediniz.
+### Satış Yapma
+* Satış yapmak için ilk olarak Game sınıfı kullanılarak bir oyun referansı oluşturulmalıdır.
+* Satış işlemi sırasında müşteri ve oyun bilgileri parametre olarak sell metoduna verilmelidir.
+* SellingManager sınıfı kullanılarak satış işlemi gerçekleştirilebilir.
+* Eğer satış sırasında bir kampanya kullanılacaksa, Campaign sınıfı kullanılarak kampanya oluşturulmalıdır.
 
-4.     Satışlarda kampanya entegrasyonunu simule ediniz.
+### Kampanya Oluşturma
+* Yeni bir kampanya oluşturmak için Campaign sınıfından yeni bir kampanya oluşturulmalıdır.
+* Campaign sınıfının yapıcı metoduna id, indirim yüzdesi, indirim süresi ve hangi oyunun kampanyalı olmasını isteniliyorsa o oyunun referansı verilmelidir.
+* Kampanya oluşturulduktan sonra CampaignManager sınıfındaki addCampaign metodu kullanılarak kampanya sisteme eklenmelidir.
+* Kampanyanın bilgilerini güncellenmesi için updateCampaign, silinmesi için deleteCampaign metodu kullanılmalıdır.
 
-5.     Ödevinizi Github’a yükleyiniz. Github linkinizi paylaşınız.
+### Kampanyalı Satış
+* SellingManager sınıfındaki sell metodunun içindeki for döngüsünde eğer oyun kampanyaya girmiş ise indirim oranına göre yeni fiyatı hesaplanır. Eğer müşteri oyunu daha önceden satın almamışsa, oyun listesine satın aldığı oyun eklenir.
 
-![output](https://user-images.githubusercontent.com/69295311/225978643-841ffa85-cc3c-497f-8ce9-1516fabb4de9.png)
+<br />
+<img src="https://user-images.githubusercontent.com/69295311/225978643-841ffa85-cc3c-497f-8ce9-1516fabb4de9.png" />
 
