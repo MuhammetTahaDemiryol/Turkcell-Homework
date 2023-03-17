@@ -38,42 +38,7 @@ public class SellingManager implements SellingService {
         }
 
     }
-//    @Override
-//    public void campaignSell(Customer customer, Game game) {
-//        for(Campaign campaign:campaignService.getCampaigns()){
-//
-//            if(campaign.getGames().contains(game) && !(customer.getGames().contains(game))){
-//                game.setCost(game.getCost()-(game.getCost()*campaign.getDiscountAmount()/100));
-//                game.setCountOwner(game.getCountOwner()+1);
-//                System.out.println("New Cost "+ game.getName()+" is "+game.getCost());
-//                customer.addGame(game);
-//
-//            }
-//        }
-//
-//    }
 
-    /*@Override
-    public void sell(Customer customer, Game game) {
-        for(Campaign campaign:campaignService.getCampaigns()){
-
-            if(campaign.getGames().contains(game) && !(customer.getGames().contains(game))){
-                game.setCost(game.getCost()-(game.getCost()*campaign.getDiscountAmount()/100));
-                game.setCountOwner(game.getCountOwner()+1);
-                System.out.println("New Cost "+ game.getName()+" is "+game.getCost());
-                System.out.println("Game " + game.getName() + " sold to " + customer.getName());
-                customer.addGame(game);
-
-            }
-        }
-        if (customer.getGames().contains(game)) {
-            return;
-        } else {
-            game.setCountOwner(game.getCountOwner() + 1);
-            customer.addGame(game);
-            System.out.println("Game " + game.getName() + " sold to " + customer.getName());
-        }
-    }*/
 
 
 }

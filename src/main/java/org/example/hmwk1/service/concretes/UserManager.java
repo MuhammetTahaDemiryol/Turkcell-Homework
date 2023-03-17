@@ -57,7 +57,7 @@ public class UserManager implements UserService {
 
     @Override
     public void updateUser(int id, Customer customer) {
-        Customer userToUpdate = null;
+        Customer userToUpdate;
         for (Customer user2 : customers) {
             if (user2.getId() == id) {
                 System.out.println(user2.getName() +" is updated to " + customer.getName());

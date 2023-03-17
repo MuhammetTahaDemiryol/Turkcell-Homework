@@ -33,9 +33,8 @@ public class Main {
         Customer john = new Customer(1,"7676@gmail.com","4321","John","Williams","767676767676",1932);
         Customer harry = new Customer(2,"7676@gmail.com","4321","Harry","Potter","12121212",2000);
         Customer weasley = new Customer(3,"7676@gmail.com","4321","Weasley","Williams","13131313",2002);
-
         Customer snape = new Customer(4,"7676@gmail.com","4321","Snape","Williams","1111111",2006);
-        // Customer ron = new Customer(4,"7676@gmail.com","4321","Ron","Williams","1111111",2006, game4);
+
 
 
         userManager.addUser(john);

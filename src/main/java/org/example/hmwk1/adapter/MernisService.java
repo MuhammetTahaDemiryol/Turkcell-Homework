@@ -16,10 +16,6 @@ public class MernisService implements CheckService {
 
     public void fillList() {
 
-        //Developer developer = new Developer(1,"example@mail.com", "12345678","1");
-
-//        Game game = new Game(1,"Battlefront 2",50,"Star Wars fps game",0);
-//        Game game2 = new Game(2,"Hogwarts Legacy",100,"Chosen boy ",0);
 
 
 
@@ -47,12 +43,7 @@ public class MernisService implements CheckService {
         }
         return false;
     }
-//    public void printList(){
-//        for (Customer customer : userList) {
-//            System.out.println(customer.toString());
-//        }
-//
-//    }
+
 
 
 
